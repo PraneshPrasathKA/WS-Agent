@@ -1,0 +1,20 @@
+fastapi
+uvicorn[standard]
+
+# LangChain stack
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+
+# Correct dependency versions
+google-generativeai
+langsmith
+
+httpx
+
+pydantic>=2.7.4
+
+python-dotenv
+langchain-xai
+langchain-groq
