@@ -7,8 +7,21 @@ from state import state_manager
 from utils import get_calcom_api_key, get_calcom_event_type_id, create_calcom_booking
 import uvicorn
 import os
+import sys
 import uuid
 from dotenv import load_dotenv
+
+# Force UTF-8 encoding for stdout and stderr to prevent UnicodeEncodeError on Windows terminal when printing emojis
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+if hasattr(sys.stderr, 'reconfigure'):
+    try:
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 
 # Load environment variables from .env file
 load_dotenv()
